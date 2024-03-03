@@ -1,24 +1,31 @@
 # WE CAN ALL BE CAPTAINS
 
-This data science project analyzes 60,000 flight reviews using advanced Natural Language Processing (NLP) techniques, specifically focusing on topic modeling and sentiment analysis. Our goal is to provide a comprehensive overview of the current state of air travel globally. The project leverages the latest developments in Large Language Models (LLMs) to demonstrate how NLP can facilitate large-scale public engagement, particularly in sectors like aviation that operate as quasi-public utilities.
+This data science project analyzes 60,000 flight reviews using  Natural Language Processing (NLP) techniques, specifically focusing on topic modeling and sentiment analysis. The project uses Large Language Models (LLMs) to demonstrate how NLP can facilitate large-scale public engagement, particularly in sectors like aviation that operate as quasi-public utilities.
 
 The advent of LLMs marks a significant milestone, offering unprecedented opportunities for individuals to interact with governments and other large organizations efficiently. This analysis serves as a case study in harnessing the power of NLP for public discourse, highlighting the potential of AI agents to assist in navigating complex surveys or official documents, ultimately making such interactions more user-friendly and accessible.
 
 Through this project, we envision a future where AI-enhanced communication enables a more democratic and responsive engagement between the public and sectors critical to everyday life, like aviation. By applying sophisticated NLP methodologies, we aim to unlock insights into passenger experiences and expectations, paving the way for improved service standards and more informed public policies.
 
 
-
 ## Executive Summary
 
-n 2019, the world witnessed over 4.5 billion air travelers, underscoring the monumental scale of global mobility enabled by advancements in engineering and system design. These travelers flew for various reasons: work, connecting with family and friends, or exploring new destinations. This mass movement represents a modern marvel of connectivity and accessibility.
+In 2019, the world witnessed over 4.5 billion air travelers, underscoring the monumental scale of global mobility enabled by advancements in engineering and system design.
 
-Despite this achievement, the past decade has seen growing discontent among passengers towards the aviation industry, exacerbated by the COVID-19 pandemic. Rising prices, declining service quality, and limited competition have left travelers with few options and numerous grievances. As a sector that straddles both public and private domains—with airlines and airplane manufacturing on the private side, and airports, air traffic control, regulations, and international treaties on the public—there is a legitimate expectation for continuous improvement in efficiency, affordability, and service quality, driven by technological and process innovations.
+Unfortunately, the past decade has seen growing discontent among passengers towards the aviation industry, exacerbated by the COVID-19 pandemic. Rising prices, declining service quality, and limited competition have left travelers with few options and numerous grievances. As a sector that straddles both public and private domains there is a legitimate expectation for continuous improvement in efficiency, affordability, and service quality, driven by technical and process innovations.
 
 However, a significant challenge remains: the lack of a coordinated mechanism for passengers to express their concerns and demand accountability. This project introduces a novel approach to bridge this gap by proposing a simple question to every passenger disembarking from a flight: "How was your flight?" Utilizing voice-to-text transcription technology, we can capture unstructured, candid feedback directly from passengers.
 
-By applying sophisticated NLP techniques, specifically topic modeling and sentiment analysis, this project aims to transform raw, unstructured feedback from 60,000 flight reviews into actionable insights and performance metrics. These analyses will cover various aspects of the flying experience, including seat comfort, ground services, cabin services, food and beverage quality, entertainment options, and overall value for money. A special focus will be placed on the discernibly lower satisfaction rates among economy class passengers—who represent the majority of air travelers—highlighting an area in urgent need of attention.
+By applying  NLP techniques, specifically topic modeling and sentiment analysis, we are able to transform raw, unstructured feedback from 60,000 flight reviews into actionable insights and performance metrics. These analyses will cover various aspects of the flying experience, including seat comfort, ground services, cabin services, food and beverage quality, entertainment options, and overall value for money.
 
-Our methodology involves three different topic modeling techniques and two predictive algorithms to synthesize vast amounts of feedback into meaningful information. The outcomes of this project will equip media, civil society, and policymakers with the evidence required to advocate for meaningful changes within the aviation industry, ensuring that the voices of millions of travelers are heard and acted upon.
+Our preffered method uses a LLM to model topics and sentiments into 12 explainable features (seat_comfort, ground_service, cabin_service, entertainment, food, value_for_money). Those features are used in a logistic regression model to determine what most impacted a passengers satisfaction with their flight.
+
+![image](https://github.com/phershaw/good_flight/assets/46425764/e8f0462c-8dfe-47ac-b438-fa164c38e72d)
+
+The image above shows that a possitive impression of the cabin_service is the key determinant for a good flight, and a negative experience with ground_services is the key determinant poor flight. 
+
+The LLM output also allows us to see the prevalence of different topics over time.
+
+![image](https://github.com/phershaw/good_flight/assets/46425764/45466787-9180-48fe-8bf2-46d21ce0cbc9)
 
 Through this initiative, we aim to demonstrate the power of NLP in enhancing public engagement and accountability in the aviation sector, fostering a more responsive and passenger-centric approach to air travel.
 
@@ -45,13 +52,6 @@ Through this initiative, we aim to demonstrate the power of NLP in enhancing pub
 | value_for_money   | Rating for overall value for money (1-5)                                    | 63975 | -      |
 | recommended       | Recommendation status (yes/no)                                              | 64440 | 2      |
 
-
-
-Synthesized Data Includes: 
-- Nationality of airline
-- Number of day between flight and review
-- Length of review
-- Topic Modeling: LDA (2 topics), BERTopic(~200 Topics), LLM(a negative or positive sentiment on seat comfort, cabine service, ground service, entertainment, food and beverage, and value for money.)
 
 ## Method
 ### Step 1: Data Cleaning
@@ -150,17 +150,3 @@ Let this be a call to action, leveraging the combined strengths of LLMs and mach
 
 ![Seat Comfort Graph](graphs/seatcomfort.png)
 
-
-## Next Steps
-
-- Improve Accuracy: Aim for over 95% accuracy by fine-tuning the model's hyperparameters, ensuring our predictions are as reliable as possible.
-
-- Enhance Training Speed: Deploy our training process on a compute cluster, significantly reducing model training time and facilitating more extensive experimentation.
-
-- Expand Predictive Features: Extend our model to accurately predict a total of 7 features, encompassing overall satisfaction, seat comfort, cabin service, ground service, entertainment, food & beverage, and value for money.
-
-- Develop a Demo Application: Create an interactive demo app to showcase our model's capabilities in a user-friendly manner, allowing stakeholders to engage directly with the technology.
-
-- Draft a Sample Press Release: Prepare a press release to announce significant project milestones or findings, aiming to generate interest and support.
-- Create Documentation: Develop comprehensive documentation, including both text and video formats, to explain the project's methodology, findings, and usage of the demo app effectively.
-- Explore Open Source Alternatives: Investigate and experiment with open-source LLMs, such as LLaMA 2, to assess their feasibility and performance in comparison to our current model.
